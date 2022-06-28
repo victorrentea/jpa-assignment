@@ -39,7 +39,9 @@ Stuff to use
 Start small, with the least connected Entity (for example Error Lor or TeacherDetails).
 Also, comment out inconvenient collections until the entity starts to be generated, then uncomment the children collections progressively.  
 
-In order to test how entities are inserted, try to insert several entities of each type in `JpaApplication#insertHere` 
+In order to test how entities are inserted, try to insert several entities of each type in `JpaApplication#insertHere`
+
+If you really block, there is a COMMIT in the git history called 'SOLVED'. I wonder what that contains ... :P
 
 ## Tradeoffs and Debates
 What are the design alternatives you see?
