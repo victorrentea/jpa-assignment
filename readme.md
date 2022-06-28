@@ -32,7 +32,8 @@ Stuff to use
 - @JoinColumn
 - ...
 
-Start small, with the least connected Entity; For example Error Lor or TeacherDetails
+Start small, with the least connected Entity (for example Error Lor or TeacherDetails).
+Also, comment out inconvenient collections until the entity starts to be generated, then uncomment the children collections progressively.  
 
 ## Tradeoffs and Debates
 What are the design alternatives you see?
