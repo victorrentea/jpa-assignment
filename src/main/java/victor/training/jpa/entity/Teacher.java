@@ -43,7 +43,7 @@ public class Teacher {
 
 	// TODO order by type and value ASC
 	@ElementCollection
-	@OrderBy("type ASC, value ASC")
+	@OrderBy("type ASC, id ASC")
 	private List<ContactChannel> channels = new ArrayList<>();
 
 	@OneToMany(mappedBy = "holderTeacher")

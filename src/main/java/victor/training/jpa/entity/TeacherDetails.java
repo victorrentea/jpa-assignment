@@ -17,6 +17,7 @@ public class TeacherDetails {
 	
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
+	// TODO : what if this grows very big?
 	private String cv;
 
 }

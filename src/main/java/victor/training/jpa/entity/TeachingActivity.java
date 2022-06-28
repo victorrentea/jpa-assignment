@@ -27,7 +27,7 @@ public abstract class TeachingActivity {
 	private Subject subject;
 	
 	@Enumerated(EnumType.STRING)
-	private DayOfWeek day;
+	private DayOfWeek dayOfWeek;
 	
 	private Integer startHour;
 	

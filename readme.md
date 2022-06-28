@@ -32,6 +32,8 @@ Stuff to use
 - @JoinColumn
 - ...
 
+Start small, with the least connected Entity; For example Error Lor or TeacherDetails
+
 ## Tradeoffs and Debates
 What are the design alternatives you see?
 

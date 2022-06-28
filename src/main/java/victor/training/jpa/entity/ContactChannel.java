@@ -24,14 +24,14 @@ public class ContactChannel {
 	@Enumerated(EnumType.STRING)
 	private Type type;
 	
-	private String value;
+	private String id;
 	
 	private ContactChannel() {
 	}
 
-	public ContactChannel(Type type, String value) {
+	public ContactChannel(Type type, String id) {
 		this.type = type;
-		this.value = value;
+		this.id = id;
 	}
 
 }
