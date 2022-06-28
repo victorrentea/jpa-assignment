@@ -8,7 +8,6 @@ import javax.persistence.Enumerated;
 
 @Getter
 
-@Embeddable
 public class ContactChannel {
 
 	public enum Type {
@@ -21,7 +20,6 @@ public class ContactChannel {
 		LINKED_IN
 	}
 	
-	@Enumerated(EnumType.STRING)
 	private Type type;
 	
 	private String id;

@@ -14,10 +14,7 @@ import javax.persistence.Id;
 @ToString
 @NoArgsConstructor
 
-@Entity
 public class ErrorComment {
-   @Id
-   @GeneratedValue
    private Long id;
    private String text;
 

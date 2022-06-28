@@ -11,13 +11,11 @@ import java.time.DayOfWeek;
 @Getter
 @ToString
 
-@Embeddable
 public class TimeSlot {
 
-	@Enumerated(EnumType.STRING)
 	private DayOfWeek day;
 	// embeddable names are contextualized using spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
-	
+
 	private int startHour;
 	
 	private int hours;

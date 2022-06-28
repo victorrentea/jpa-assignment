@@ -15,18 +15,12 @@ import java.util.Set;
 @Getter
 @Setter
 
-@Entity
-@DiscriminatorColumn(name = "DISCR")
 public abstract class TeachingActivity {
 	
-	@Id
-	@GeneratedValue
 	private Long id;
 	
-	@ManyToOne
 	private Subject subject;
 	
-	@Enumerated(EnumType.STRING)
 	private DayOfWeek dayOfWeek;
 	
 	private Integer startHour;
@@ -39,7 +33,6 @@ public abstract class TeachingActivity {
 	
 	private String lastModifiedBy;
 	
-	@ManyToMany
 	private Set<Teacher> teachers = new HashSet<>();
 
 }
