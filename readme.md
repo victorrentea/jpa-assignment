@@ -1,5 +1,5 @@
 # JPA Training 
-http://victorrrentea.ro
+http://victorrentea.ro
 
 ### Assignment
 First, start up the in-memory database by running `StartDatabase.java`.
