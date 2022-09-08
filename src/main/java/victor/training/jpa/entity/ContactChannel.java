@@ -1,13 +1,13 @@
 package victor.training.jpa.entity;
 
 import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
 @Getter
-
+@Setter
+@Entity
 public class ContactChannel {
 
 	public enum Type {
@@ -20,10 +20,11 @@ public class ContactChannel {
 		LINKED_IN
 	}
 	
-	private Type type;
-	
+	@Id
 	private String id;
-	
+	private Type type;
+	private String value;
+
 	private ContactChannel() {
 	}
 

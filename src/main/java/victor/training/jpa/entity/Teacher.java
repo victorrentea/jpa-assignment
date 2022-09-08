@@ -43,7 +43,8 @@ public class Teacher {
 
 	//
 //	// TODO order by type and value ASC
-//	private List<ContactChannel> channels = new ArrayList<>();
+	@OneToMany
+	private List<ContactChannel> channels = new ArrayList<>();
 //
 	@OneToMany(mappedBy = "holderTeacher")
 	private Set<Subject> heldSubjects = new HashSet<>() ;
