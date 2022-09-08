@@ -35,7 +35,7 @@ public class Teacher {
 	@Enumerated(EnumType.STRING)
 	private Grade grade;
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private TeacherDetails details;
 
 	public void setDetails(TeacherDetails details) {
