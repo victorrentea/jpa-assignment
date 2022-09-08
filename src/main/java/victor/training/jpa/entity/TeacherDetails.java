@@ -13,7 +13,6 @@ public class TeacherDetails {
 	@Id
 	private Long id;
 	
-	// TODO : what if this grows very big?
 	@Lob
 	private String cv;
 

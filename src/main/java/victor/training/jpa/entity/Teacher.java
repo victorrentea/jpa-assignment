@@ -39,12 +39,13 @@ public class Teacher extends BaseEntity {
 		details.setTeacher(this);
 	}
 
-	//
-//	// TODO order by type and value ASC
 	@ElementCollection
+	@OrderColumn(name = "INDEX") // +1 coloana folosita magic de Hib la READ si WRITE
+//	@OrderBy("type")
 	private List<ContactChannel> channels = new ArrayList<>();
 //
 	@OneToMany(mappedBy = "holderTeacher")
+	@OrderBy("name")
 	private Set<Subject> heldSubjects = new HashSet<>() ;
 
 	public void addSubject(Subject subject) {
@@ -60,15 +61,15 @@ public class Teacher extends BaseEntity {
 	@ManyToMany
 	@JoinTable(
 			joinColumns = @JoinColumn(name = "TEACHER_ID"),
-	inverseJoinColumns = @JoinColumn(name = "ACTIVITY_ID"))
+			inverseJoinColumns = @JoinColumn(name = "ACTIVITY_ID"))
 	private Set<TeachingActivity> activities = new HashSet<>();
 
 	@Embedded
 //	@AttributeOverrides(
-//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
-//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
-//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
-//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+		//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+		//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+		//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+		//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
 //	)
 	private TimeSlot counseling;
 
