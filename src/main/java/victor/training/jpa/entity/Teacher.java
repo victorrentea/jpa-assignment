@@ -11,7 +11,7 @@ import java.util.*;
 @Getter
 @Setter
 @Entity
-public class Teacher {
+public class Teacher extends BaseEntity {
 
 	public enum Grade {
 		LECTURER("L"),
@@ -24,8 +24,6 @@ public class Teacher {
 			this.dbValue = dbValue;
 		}
 	}
-	@Id
-	private Long id;
 
 	private String name;
 

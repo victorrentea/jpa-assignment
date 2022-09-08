@@ -14,12 +14,14 @@ import java.util.Set;
 
 @Getter
 @Setter
-
+@Entity
+@DiscriminatorColumn(name = "DISCR")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class TeachingActivity {
-	
+	@Id
 	private Long id;
 	
-	private Subject subject;
+//	private Subject subject;
 	
 	private DayOfWeek dayOfWeek;
 	
@@ -33,6 +35,6 @@ public abstract class TeachingActivity {
 	
 	private String lastModifiedBy;
 	
-	private Set<Teacher> teachers = new HashSet<>();
+//	private Set<Teacher> teachers = new HashSet<>();
 
 }

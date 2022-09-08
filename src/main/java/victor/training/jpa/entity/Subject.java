@@ -15,10 +15,8 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-public class Subject  { // eg Fizica 2, SDA
-	@Id
-	private Long id;
-	
+public class Subject extends BaseEntity { // eg Fizica 2, SDA
+
 	private String name;
 	
 	private boolean active;

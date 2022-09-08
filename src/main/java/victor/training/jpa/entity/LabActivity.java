@@ -9,9 +9,10 @@ import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
-
+@Entity
+@DiscriminatorValue("LAB")
 public class LabActivity extends TeachingActivity {
-
-	private StudentsGroup group;
+	private String labType; // NOT NULL
+//	private StudentsGroup group;
 
 }
