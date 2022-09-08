@@ -6,10 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @Setter
@@ -27,7 +24,7 @@ public class Teacher {
 			this.dbValue = dbValue;
 		}
 	}
-@Id
+	@Id
 	private Long id;
 
 	private String name;
@@ -47,8 +44,24 @@ public class Teacher {
 //	// TODO order by type and value ASC
 //	private List<ContactChannel> channels = new ArrayList<>();
 //
-//	private Set<Subject> heldSubjects = new HashSet<>() ;
+	@OneToMany(mappedBy = "holderTeacher")
+	private Set<Subject> heldSubjects = new HashSet<>() ;
+
+	public void addSubject(Subject subject) {
+		this.heldSubjects.add(subject);
+		subject.setHolderTeacher(this);
+	}
+
+	public Set<Subject> getHeldSubjects() {
+		return Collections.unmodifiableSet(heldSubjects);
+	}
+
+//	static {
+//		Teacher teacher = new Teacher();
+//		teacher.getHeldSubjects().add(new Subject());
+//	}
 //
+	
 //	private Set<TeachingActivity> activities = new HashSet<>();
 
 	private DayOfWeek counselingDay;
