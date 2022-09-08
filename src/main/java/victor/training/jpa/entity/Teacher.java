@@ -54,17 +54,10 @@ public class Teacher {
 		this.heldSubjects.add(subject);
 		subject.setHolderTeacher(this);
 	}
-
 	public Set<Subject> getHeldSubjects() {
 		return Collections.unmodifiableSet(heldSubjects);
 	}
 
-//	static {
-//		Teacher teacher = new Teacher();
-//		teacher.getHeldSubjects().add(new Subject());
-//	}
-//
-	
 //	private Set<TeachingActivity> activities = new HashSet<>();
 
 	private DayOfWeek counselingDay;
