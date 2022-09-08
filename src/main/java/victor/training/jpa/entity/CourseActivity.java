@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 @Getter
 @Setter
 @Entity
-@DiscriminatorValue("COURSE")
 public class CourseActivity extends TeachingActivity {
 	private boolean sePoateDormi;
 //	private StudentsYear year;

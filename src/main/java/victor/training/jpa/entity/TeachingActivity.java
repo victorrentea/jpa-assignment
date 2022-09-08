@@ -15,8 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@DiscriminatorColumn(name = "DISCR")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class TeachingActivity {
 	@Id
 	private Long id;
