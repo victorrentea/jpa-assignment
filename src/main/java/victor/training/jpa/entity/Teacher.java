@@ -46,14 +46,14 @@ public class Teacher extends BaseEntity {
 //
 	@OneToMany(mappedBy = "holderTeacher")
 	@OrderBy("name")
-	private Set<Subject> heldSubjects = new HashSet<>() ;
+	private List<Subject> heldSubjects = new ArrayList<>() ;
 
 	public void addSubject(Subject subject) {
 		this.heldSubjects.add(subject);
 		subject.setHolderTeacher(this);
 	}
-	public Set<Subject> getHeldSubjects() {
-		return Collections.unmodifiableSet(heldSubjects);
+	public List<Subject> getHeldSubjects() {
+		return Collections.unmodifiableList(heldSubjects);
 	}
 
 
