@@ -5,6 +5,7 @@ import lombok.ToString;
 
 import javax.persistence.Embeddable;
 import java.time.DayOfWeek;
+import java.util.Objects;
 
 @Getter
 @ToString
@@ -20,13 +21,15 @@ public class TimeSlot {
 	
 	private String roomId;
 
-	protected TimeSlot() {}
+	protected TimeSlot() {} // pt hibernate
 
-	public TimeSlot(DayOfWeek day, int startHour, int durationHours, String roomId) {
-		this.day = day;
+	public TimeSlot(DayOfWeek day, int startHour, String roomId) { // pt deloperi
+		this.day = Objects.requireNonNull(day);
+		if (startHour < 7 || startHour > 20) {
+			throw new IllegalArgumentException();
+		}
 		this.startHour = startHour;
-		this.durationHours = durationHours;
-		this.roomId = roomId;
+		this.roomId = Objects.requireNonNull(roomId);
 	}
 
 }
