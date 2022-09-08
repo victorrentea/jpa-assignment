@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-
+@Entity
 public class Teacher {
 
 	public enum Grade {
@@ -26,21 +26,23 @@ public class Teacher {
 			this.dbValue = dbValue;
 		}
 	}
-
+@Id
 	private Long id;
 
 	private String name;
 
+	@Enumerated(EnumType.STRING)
 	private Grade grade;
 
+	@OneToOne
 	private TeacherDetails details;
-
-	// TODO order by type and value ASC
-	private List<ContactChannel> channels = new ArrayList<>();
-
-	private Set<Subject> heldSubjects = new HashSet<>() ;
-
-	private Set<TeachingActivity> activities = new HashSet<>();
+//
+//	// TODO order by type and value ASC
+//	private List<ContactChannel> channels = new ArrayList<>();
+//
+//	private Set<Subject> heldSubjects = new HashSet<>() ;
+//
+//	private Set<TeachingActivity> activities = new HashSet<>();
 
 	private DayOfWeek counselingDay;
 

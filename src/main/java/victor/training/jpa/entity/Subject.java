@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class Subject  {
+public class Subject  { // eg Fizica 2, SDA
 	private Long id;
 	
 	private String name;
@@ -22,7 +22,8 @@ public class Subject  {
 	private boolean active;
 	
 	private Teacher holderTeacher;
-	
+
+	// TODO List sau Set de copii?
 	private List<TeachingActivity> activities = new ArrayList<>();
 	
 	private LocalDateTime lastModifiedDate;
