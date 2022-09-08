@@ -1,5 +1,6 @@
 package victor.training.jpa.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,7 +37,13 @@ public class Teacher {
 
 	@OneToOne
 	private TeacherDetails details;
-//
+
+	public void setDetails(TeacherDetails details) {
+		this.details = details;
+		details.setTeacher(this);
+	}
+
+	//
 //	// TODO order by type and value ASC
 //	private List<ContactChannel> channels = new ArrayList<>();
 //

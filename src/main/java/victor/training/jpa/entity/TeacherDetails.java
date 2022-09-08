@@ -1,5 +1,6 @@
 package victor.training.jpa.entity;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ public class TeacherDetails {
 	private String cv;
 
 	@OneToOne(mappedBy = "details") // 'inverse side' of a bidirectional relationship
+	@Setter(AccessLevel.PACKAGE)
 	private Teacher teacher;
 
 }
