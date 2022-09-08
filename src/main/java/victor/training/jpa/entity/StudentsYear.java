@@ -20,7 +20,12 @@ public class StudentsYear {
 
 	// Order groups by POSITION (order matters)
 	@OneToMany(mappedBy = "year")
-	private List<StudentsGroup> groups = new ArrayList<>();
+	// SELECT * FROM GROUP WHERE YEAR = ?
+	private Set<StudentsGroup> groups = new HashSet<>();
+
+	// List pastreaza ordinea
+	// HashSet elimina duplicate> elem tale trebuie sa implementeze hashCode/equals
+	// daca NU implementezi hashCode/equals:
 	@OneToMany(mappedBy = "year")
 	private Set<CourseActivity> courses = new HashSet<>();
 
