@@ -43,8 +43,7 @@ public class Teacher {
 
 	//
 //	// TODO order by type and value ASC
-	@OneToMany
-	@JoinColumn(name = "TEACHER_ID")
+	@ElementCollection
 	private List<ContactChannel> channels = new ArrayList<>();
 //
 	@OneToMany(mappedBy = "holderTeacher")

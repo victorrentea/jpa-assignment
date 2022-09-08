@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Entity
+@Embeddable
 public class ContactChannel {
 
 	public enum Type {
@@ -20,17 +20,15 @@ public class ContactChannel {
 		LINKED_IN
 	}
 	
-	@Id
-	private String id;
 	private Type type;
 	private String value;
 
 	private ContactChannel() {
 	}
 
-	public ContactChannel(Type type, String id) {
+	public ContactChannel(Type type, String value) {
 		this.type = type;
-		this.id = id;
+		this.value = value;
 	}
 
 }
