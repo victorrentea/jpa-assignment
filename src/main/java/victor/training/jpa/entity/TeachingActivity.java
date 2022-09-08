@@ -19,8 +19,9 @@ import java.util.Set;
 public abstract class TeachingActivity {
 	@Id
 	private Long id;
-	
-//	private Subject subject;
+
+	@ManyToOne
+	private Subject subject;
 	
 	private DayOfWeek dayOfWeek;
 	
@@ -33,7 +34,8 @@ public abstract class TeachingActivity {
 	private LocalDateTime lastModifiedDate;
 	
 	private String lastModifiedBy;
-	
-//	private Set<Teacher> teachers = new HashSet<>();
+
+	@ManyToMany(mappedBy = "activities")
+	private Set<Teacher> teachers = new HashSet<>();
 
 }

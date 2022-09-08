@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class CourseActivity extends TeachingActivity {
 	private boolean sePoateDormi;
-//	private StudentsYear year;
+	@ManyToOne
+	private StudentsYear year;
 
 }

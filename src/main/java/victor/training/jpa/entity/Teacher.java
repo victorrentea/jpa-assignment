@@ -55,7 +55,13 @@ public class Teacher extends BaseEntity {
 		return Collections.unmodifiableSet(heldSubjects);
 	}
 
-//	private Set<TeachingActivity> activities = new HashSet<>();
+
+
+	@ManyToMany
+	@JoinTable(
+			joinColumns = @JoinColumn(name = "TEACHER_ID"),
+	inverseJoinColumns = @JoinColumn(name = "ACTIVITY_ID"))
+	private Set<TeachingActivity> activities = new HashSet<>();
 
 	private DayOfWeek counselingDay;
 

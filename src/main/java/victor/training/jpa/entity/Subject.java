@@ -27,7 +27,8 @@ public class Subject extends BaseEntity { // eg Fizica 2, SDA
 	private Teacher holderTeacher;
 
 	// TODO List sau Set de copii?
-//	private List<TeachingActivity> activities = new ArrayList<>();
+	@OneToMany(mappedBy = "subject")
+	private List<TeachingActivity> activities = new ArrayList<>();
 	
 	private LocalDateTime lastModifiedDate; // TIMESTAMP autmat
 	private String lastModifiedBy;
