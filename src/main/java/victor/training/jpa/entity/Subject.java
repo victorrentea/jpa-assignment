@@ -24,6 +24,7 @@ public class Subject  { // eg Fizica 2, SDA
 	private boolean active;
 
 	@ManyToOne
+	@JoinColumn(name = "TEACHER_ID")
 	@Setter(AccessLevel.PACKAGE)
 	private Teacher holderTeacher;
 

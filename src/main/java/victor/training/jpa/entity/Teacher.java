@@ -29,6 +29,7 @@ public class Teacher {
 
 	private String name;
 
+
 	@Enumerated(EnumType.STRING)
 	private Grade grade;
 
