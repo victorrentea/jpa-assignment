@@ -22,15 +22,10 @@ public abstract class TeachingActivity {
 
 	@ManyToOne
 	private Subject subject;
-	
-	private DayOfWeek dayOfWeek;
-	
-	private Integer startHour;
-	
-	private Integer durationInHours;
-	
-	private String roomId;
-	
+
+	@Embedded
+	private TimeSlot timeSlot;
+
 	private LocalDateTime lastModifiedDate;
 	
 	private String lastModifiedBy;

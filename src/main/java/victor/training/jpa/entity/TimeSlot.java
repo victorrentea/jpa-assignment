@@ -4,13 +4,11 @@ import lombok.Getter;
 import lombok.ToString;
 
 import javax.persistence.Embeddable;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import java.time.DayOfWeek;
 
 @Getter
 @ToString
-
+@Embeddable
 public class TimeSlot {
 
 	private DayOfWeek day;
@@ -18,16 +16,16 @@ public class TimeSlot {
 
 	private int startHour;
 	
-	private int hours;
+	private int durationHours;
 	
 	private String roomId;
 
 	protected TimeSlot() {}
 
-	public TimeSlot(DayOfWeek day, int startHour, int hours, String roomId) {
+	public TimeSlot(DayOfWeek day, int startHour, int durationHours, String roomId) {
 		this.day = day;
 		this.startHour = startHour;
-		this.hours = hours;
+		this.durationHours = durationHours;
 		this.roomId = roomId;
 	}
 

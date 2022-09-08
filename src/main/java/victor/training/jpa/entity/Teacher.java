@@ -63,13 +63,14 @@ public class Teacher extends BaseEntity {
 	inverseJoinColumns = @JoinColumn(name = "ACTIVITY_ID"))
 	private Set<TeachingActivity> activities = new HashSet<>();
 
-	private DayOfWeek counselingDay;
-
-	private Integer counselingStartHour;
-
-	private Integer counselingDurationInHours;
-
-	private String counselingRoomId;
+	@Embedded
+//	@AttributeOverrides(
+//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+//@AttributeOverride(name = "room", @Column(name = "COUNSELING_HOUR")),
+//	)
+	private TimeSlot counseling;
 
 	public Teacher() {
 	}
