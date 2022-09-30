@@ -2,10 +2,6 @@ package victor.training.jpa.entity;
 
 import lombok.Getter;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
 @Getter
 
 public class ContactChannel {
@@ -22,14 +18,14 @@ public class ContactChannel {
 	
 	private Type type;
 	
-	private String id;
+	private String value;
 	
 	private ContactChannel() {
 	}
 
-	public ContactChannel(Type type, String id) {
+	public ContactChannel(Type type, String value) {
 		this.type = type;
-		this.id = id;
+		this.value = value;
 	}
 
 }
